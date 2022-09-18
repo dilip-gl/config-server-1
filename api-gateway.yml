@@ -51,4 +51,9 @@ spring:
           filters:
             - RewritePath=/interviewer-service(?<segment>/?.*), $\{segment}
        
-       
+        - id: productwebapp
+          uri: http://locahost:4200
+          predicates:
+            - Path=/**
+          filters:
+            - RewritePath=(?<segment>/?.*), $\{segment}       
